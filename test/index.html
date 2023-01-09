@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Type Anything Below 👇</h1>
+    <input type="text" />
+    <script>
+      let input = document.querySelector('input');
+      let h1 = document.querySelector('h1');
+      var lasttxt = "";
+      
+      setInterval(() => {
+        if (!(input.value == lasttxt)) {
+          if (input.value == '') {
+            h1.innerHTML = "Type Anything Below 👇";
+          } else {
+            h1.innerHTML = input.value;
+          }
+          lasttxt = input.value;
+        }
+      }, 50);
+    </script>
+  </body>
+</html>

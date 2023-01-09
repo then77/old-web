@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+@font-face{
+  font-family: 'Pixellari';
+  src: url('Pixellari.woff2') format('woff2'),
+    url('Pixellari.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+noscript {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#particles {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.animhide {
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+@keyframes wavehand {
+  20%{
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  40%{
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  60%{
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  80%{
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  to{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+img.wavehand {
+  animation: wavehand;
+  animation-duration: var(--animate-duration);
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+h1.my-name {
+  background: rgb(119,234,241);
+  background: -webkit-linear-gradient(90deg, rgba(119,234,241,1) 0%, rgba(47,246,110,1) 100%);
+  background: linear-gradient(90deg, rgba(119,234,241,1) 0%, rgba(47,246,110,1) 100%);
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  background-repeat: repeat-x;
+  animation-delay: 1s;
+}
+
+@keyframes downarrow {
+  0%{margin-top: 0px;}
+  50%{margin-top: 16px;}
+  to{margin-top: 0px;}
+}
+div.banner div.downarrow, div.banner p.desc {
+  animation-delay: 2s;
+}
+div.banner div.downarrow i {
+  animation: downarrow ease-out 3s infinite;
+}
+
+@keyframes typeblink {
+  from{opacity: 1;}
+  to{opacity: 0;}
+}
+h1.my-name span, div.about-me i.blink, div.my-projects i.blink {
+  animation: typeblink 1s linear infinite;
+  animation-duration: var(--animate-duration);
+}
+
+div.banner p.desc, div.about-me p.title, div.my-projects p.title {
+  font-family: 'Pixellari', 'Poppins', sans-serif;
+}
+
+div.banner, div.footer, div.about-me p.title, div.my-projects p.title {
+  user-select: none;
+}
